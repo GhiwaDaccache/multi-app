@@ -29,14 +29,18 @@ const Home = () => {
             </div>
 
             <div className="application primary-bg shadow flex center column gap" 
-            
+            onClick = {() => {
+              navigate("/calculator")
+            }}
             >
               <FontAwesomeIcon icon={faCalculator} size="7x" style={{color: "#01109d"}} />
               <h3 className="bold secondary-text">Calculator</h3>
             </div>
 
             <div className="application primary-bg shadow flex center column gap" 
-            
+            onClick = {() => {
+              navigate("/sticky-notes")
+            }}
             >
               <FontAwesomeIcon icon={faNoteSticky} size="7x" style={{color: "#01109d"}} />
               <h3 className="bold secondary-text">Sticky notes</h3>
