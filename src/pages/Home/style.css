@@ -1,0 +1,25 @@
+header{
+    height: 250px;
+    padding: 30px;
+    background-image: url('../../styles/assets/homebanner.jpg');
+}
+
+h1{
+    font-size: 36px;
+    margin: 25px;
+}
+
+.application{
+    height: 300px;
+    width: 300px;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+.application:hover{
+    opacity: 0.8;
+}
+
+section>div{
+    gap: 50px;
+}
