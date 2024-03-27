@@ -16,8 +16,6 @@ const Weather = () => {
         const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?q=33.981781, 35.633454&days=5&key=${apiKey}`);
     
         setWeather(response.data.forecast.forecastday);
-    
-        localStorage.setItem("weather", JSON.stringify(response.data));
     };
     useEffect(() => {
         loadWeather();

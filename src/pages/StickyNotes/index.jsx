@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-// import axios from "axios";
+import StickyNote from "./components/StickyNote";
 
 import "./style.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from "@fortawesome/free-regular-svg-icons"; 
-import { faPenToSquare } from "@fortawesome/free-regular-svg-icons"; 
-import { faPlus } from "@fortawesome/free-solid-svg-icons"; 
+
 
 
 const StickyNotes = () => {
     const navigate = useNavigate();
+    const [notes, setNotes] = useState([]);
+
+    useEffect(() => {
+        const loadNotes = JSON.parse(localStorage.getItem("notes"));
+
+        setNotes(loadNotes);
+    }, []);
 
     return (
       <div className="flex page column">
@@ -28,29 +31,11 @@ const StickyNotes = () => {
             </div>
             
             <section className="flex center gap">
-                <div className="note flex column align-center primary-bg shadow">
-                    <div className="note-header full-w flex align-center">
-                        <FontAwesomeIcon icon={faTrashCan} size="2x" style={{color: "#01109d",}} />
-                        <FontAwesomeIcon icon={faPenToSquare} size="2x" style={{color: "#01109d",}} />
-                        <FontAwesomeIcon icon={faPlus} size="2x" style={{color: "#01109d",}}/>
-                    </div>
-                </div>
-
-                <div className="note flex column align-center primary-bg shadow">
-                    <div className="note-header full-w"></div>
-                </div>            
-                
-                <div className="note flex column align-center primary-bg shadow">
-                    <div className="note-header full-w"></div>
-                </div>            
-                
-                <div className="note flex column align-center primary-bg shadow">
-                    <div className="note-header full-w"></div>
-                </div>            
-                
-                <div className="note flex column align-center primary-bg shadow">
-                    <div className="note-header full-w"></div>
-                </div>
+            <div className="flex">
+                {notes.map((note) => {
+                    return <StickyNote note={note} key={note.id} />;
+                })} 
+            </div>
             </section>
 
         </section>

@@ -9,9 +9,27 @@
     height: 40px;
     background-color: #49a3e7;
     justify-content: space-around;
+    padding: 5px;
 }
 
 .actions{
     width: 100px;
     height: 40px;
+
+}
+
+.note-body{
+    height: 210px;
+    background-color: #75b8ec;
+}
+
+.note-body input{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 14px;
+}
+
+.note-body:focus {
+    outline: none; 
+    border: none; 
+    
 }
