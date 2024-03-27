@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Weather from "./pages/Weather";
 import Calculator from "./pages/Calculator";
-// import StickyNotes from "./pages/StickyNotes";
+import StickyNotes from "./pages/StickyNotes";
 
 const App = () => {
   useEffect(() => {}, []);
@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/weather" element={<Weather />} />
           <Route path="/calculator" element={<Calculator />} />
-          {/*<Route path="/sticky-notes" element={<StickyNotes />} /> */}
+          <Route path="/sticky-notes" element={<StickyNotes />} /> 
         </Routes>
       </BrowserRouter>
     </div>

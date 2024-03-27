@@ -1,0 +1,17 @@
+.note{
+    width: 250px;
+    height: 250px;
+    background-color: #75b8ec;
+    border: 1px solid #8a8a8a;
+}
+
+.note-header{
+    height: 40px;
+    background-color: #49a3e7;
+    justify-content: space-around;
+}
+
+.actions{
+    width: 100px;
+    height: 40px;
+}
