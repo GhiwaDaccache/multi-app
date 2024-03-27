@@ -11,10 +11,11 @@ const Weather = () => {
     const navigate = useNavigate();
     const [weather, setWeather] = useState([]);
 
+    const apiKey = '180949bff13a4af0b75204727242603';
     const loadWeather = async () => {
-        const response = await axios.get("http://api.weatherapi.com/v1/forecast.json?q=33.981781, 35.633454&days=5");
+        const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?q=33.981781, 35.633454&days=5&key=${apiKey}`);
     
-        setWeather(response.data);
+        setWeather(response.data.forecast.forecastday);
     
         localStorage.setItem("weather", JSON.stringify(response.data));
     };
