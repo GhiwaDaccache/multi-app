@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import StickyNote from "./components/StickyNote";
-
 import "./style.css";
+
 
 
 const StickyNotes = () => {
     const navigate = useNavigate();
     const [notes, setNotes] = useState([]);
-
     useEffect(() => {
       const storedNotes = localStorage.getItem("notes");
         let loadNotes; 
@@ -20,8 +19,6 @@ const StickyNotes = () => {
         }
         setNotes(loadNotes);
     }, []);
-
-
     return (
       <div className="flex page column">
         <header>
@@ -43,9 +40,7 @@ const StickyNotes = () => {
                 })} 
             </div>
             </section>
-
         </section>
-
       </div>
     );
   };
