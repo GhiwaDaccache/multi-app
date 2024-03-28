@@ -19,6 +19,8 @@ const StickyNotes = () => {
         }
         setNotes(loadNotes);
     }, []);
+
+
     return (
       <div className="flex page column">
         <header>
