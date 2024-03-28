@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 // import axios from "axios";
@@ -8,6 +8,14 @@ import "./style.css";
 
 const Calculator = () => {
     const navigate = useNavigate();
+    const [display, setDisplay] = useState("");
+    const [result, setResult] = useState(0);
+
+    useEffect(() => {
+      setDisplay(result);
+  }, [result]);
+
+  
 
     return (
       <div className="flex page column">
@@ -24,25 +32,68 @@ const Calculator = () => {
             </div>
 
             <div className="calculator flex column align-center primary-bg shadow">
-                <div class="display white-bg">
-                    <input type="text" id="result" disabled />
+                <div className="display white-bg">
+                    <input type="text" value={display} disabled />
                 </div>
-                <div class="buttons">
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>+</button>
-                    <button>-</button>
-                    <button>x</button>
-                    <button>/</button>
-                    <button>C</button>
-                    <button>=</button>
+                <div className="buttons">
+                    <button onClick={() =>{
+                      setDisplay(display + "1");
+                    }}>1</button>
+                    <button onClick={() =>{
+                      setDisplay(display + "2");
+                    }}>2</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "3");
+                    }}>3</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "4");
+                    }}>4</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "5");
+                    }}>5</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "6");
+                    }}>6</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "7");
+                    }}>7</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "8");
+                    }}>8</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "9");
+                    }}>9</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "+");
+                    }}>+</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "-");
+                    }}>-</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "*");
+                    }}>x</button>
+
+                    <button onClick={() =>{
+                      setDisplay(display + "/");
+                    }}>/</button>
+
+                    <button onClick={() =>{
+                      setDisplay("");
+                    }}>C</button>
+
+                    <button onClick={() =>{
+                      setResult(eval(display))
+                    }}>=</button>
                 </div>
                 
 

@@ -5,7 +5,6 @@ import StickyNote from "./components/StickyNote";
 import "./style.css";
 
 
-
 const StickyNotes = () => {
     const navigate = useNavigate();
     const [notes, setNotes] = useState([]);
