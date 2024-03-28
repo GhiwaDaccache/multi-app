@@ -23,9 +23,10 @@
     background-color: #75b8ec;
 }
 
-.note-body input{
+.note input{
     font-family: "Nanum Gothic", sans-serif;
-    font-size: 14px;
+    font-size: 24px;
+    padding: 5px;
 }
 
 .note-body:focus {

@@ -11,8 +11,15 @@ const StickyNotes = () => {
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
-        const loadNotes = JSON.parse(localStorage.getItem("notes"));
-
+      const storedNotes = localStorage.getItem("notes");
+        // const storedNotes = JSON.parse(localStorage.getItem("notes") ?? "[{ id: 0, content: ''}]" );
+        let loadNotes 
+        if(!storedNotes){
+          loadNotes = [{ id: 0, content: "" }];
+          localStorage.setItem("notes", JSON.stringify(loadNotes));
+        }else{
+          loadNotes = JSON.parse(storedNotes)
+        }
         setNotes(loadNotes);
     }, []);
 
@@ -32,8 +39,8 @@ const StickyNotes = () => {
             
             <section className="flex center gap">
             <div className="flex">
-                {notes.map((note) => {
-                    return <StickyNote note={note} key={note.id} />;
+            {notes.map((note, i) => {
+                    return <StickyNote note={note} key={i+1} />;
                 })} 
             </div>
             </section>
