@@ -12,8 +12,7 @@ const StickyNotes = () => {
 
     useEffect(() => {
       const storedNotes = localStorage.getItem("notes");
-        // const storedNotes = JSON.parse(localStorage.getItem("notes") ?? "[{ id: 0, content: ''}]" );
-        let loadNotes 
+        let loadNotes; 
         if(!storedNotes){
           loadNotes = [{ id: 0, content: "" }];
           localStorage.setItem("notes", JSON.stringify(loadNotes));
@@ -22,6 +21,7 @@ const StickyNotes = () => {
         }
         setNotes(loadNotes);
     }, []);
+
 
     return (
       <div className="flex page column">
@@ -52,4 +52,3 @@ const StickyNotes = () => {
   };
   
   export default StickyNotes;
-  
